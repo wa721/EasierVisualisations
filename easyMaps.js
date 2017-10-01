@@ -3,10 +3,6 @@ window.MakeMapOnLoad = function(mapFunction){
 }
 
 window.HeatMap = function(inputData){
-  function toggleHeatmap() {
-      heatmap.setMap(heatmap.getMap() ? null : map);
-  }
-
   var mapOptions = {
       center: new google.maps.LatLng(36.2021, 37.1343),
       zoom: 6,
@@ -48,10 +44,16 @@ window.changeGradient = function() {
       'rgba(255, 0, 0, 1)'
     ]
     heatmap.set('gradient', heatmap.get('gradient') ? null : gradient);
-  }
+}
+
 window.changeRadius = function() {
       heatmap.set('radius', heatmap.get('radius') ? null : 20);
-    }
+}
+
 window.changeOpacity = function() {
       heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
-    }
+}
+
+window.toggleHeatmap = function() {
+      heatmap.setMap(heatmap.getMap() ? null : map);
+}
